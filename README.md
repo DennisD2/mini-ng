@@ -25,10 +25,11 @@ http://localhost:8080/mini-ng/rest/echo/199
 
 ## Compile including Node.js frontend build
 This build includes the build of the frontend into the dist directory and fixes the web context. 
-For details, see maven-exec-plugin and maven-replacer-plugin sections in pom.xml.
-The result of the build is added to the WAR file. For details, see maven-war-plugin section in pom.xml.
+For details, see ```maven-exec-plugin``` and ```maven-replacer-plugin``` sections in pom.xml.
+The result of the build is added to the WAR file. For details, see ```maven-war-plugin``` section in pom.xml.
 
 The build is activated by the profile ```ng```.
+
 ```mvn clean install -P ng```
  
 ## Compile without build of frontend
@@ -45,5 +46,6 @@ Copy war file from target directory into webapp of a tomcat installation.
 Download & Install Node.js
 
 ###Install Angular CLI
-npm install -g @angular/cli
+
+```npm install -g @angular/cli```
 

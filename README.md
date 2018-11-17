@@ -13,10 +13,13 @@ Tested on Tomcat 9.0.13, JDK 10.
 
 # Call example
 
+## Start page
+http://localhost:8080/mini-ng
+
 ## REST service call
 
 ### Echo endpoint
-http://localhost:8080/mini/rest/echo/199
+http://localhost:8080/mini-ng/rest/echo/199
 
 # How to compile and package
 mvn clean install

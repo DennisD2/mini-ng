@@ -30,7 +30,7 @@ The result of the build is added to the WAR file. For details, see maven-war-plu
 
 The build is activated by the profile ```ng```.
 ```mvn clean install -P ng```
-
+ 
 ## Compile without build of frontend
 This build is faster and simply uses an earlier build result in src/frontend/dist. This does not work if there
 has been no build of tghe frontend before.

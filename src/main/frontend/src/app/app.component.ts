@@ -9,10 +9,12 @@ import { HelloService } from './services/hello.service';
 })
 export class AppComponent {
   title: String = 'mini-ng';
+  service_result: String = '(not yet called)';
+
   constructor(protected helloService: HelloService) {
    const self = this;
    helloService.getHello('test101').subscribe( echo => {
-     self.title = echo;
+     self.service_result = echo;
     });
   }
 }

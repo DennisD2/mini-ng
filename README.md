@@ -34,7 +34,7 @@ The build is activated by the profile ```ng```.
  
 ## Compile without build of frontend
 This build is faster and simply uses an earlier build result in src/frontend/dist. This does not work if there
-has been no build of tghe frontend before.
+has been no build of the frontend before.
 
 ```mvn clean install```
 
@@ -45,7 +45,7 @@ Copy war file from target directory into webapp of a tomcat installation.
 
 Download & Install Node.js
 
-###Install Angular CLI
+### Install Angular CLI
 
 ```npm install -g @angular/cli```
 

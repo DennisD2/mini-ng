@@ -42,18 +42,16 @@ has been no build of the frontend before.
 Copy war file from target directory into webapp of a tomcat installation.
 
 # Prerequisites
-
 Download & Install Node.js
 
 ### Install Angular CLI
-
 ```npm install -g @angular/cli```
 
 ### CORS issues
 As this application runs both frontend and backend in a single war, there is no CORS issue.
 
-If you run the frontent externally using ```ng serve``` and access it via localhost:4200, you will have the CORS issue, because the
-backend runs on e.g. localhost:8080. This case happens during development.
+If you run the frontent externally using ```ng serve``` and access it via ```localhost:4200```, you will have the CORS issue, because the
+backend runs on e.g. ```localhost:8080```. This case may happen during development.
 
 There are several ways to tackle this issue:
 
@@ -62,7 +60,7 @@ There are several ways to tackle this issue:
 * Other approach is to use a proxy configuration for Node.js.
 
 * Other approach is to solve it on server side. The application contains code for that (CORSFilter) and the filter
-is activated in web.xml. This should work, but it does not. Other problem with this approach is, that every REST
+is activated in ```web.xml```. This should work, but it does not. Other problem with this approach is, that every REST
 implementation solves the problem totally different. Even Jersey 1 and 2 are different.
 
 

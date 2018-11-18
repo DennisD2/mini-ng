@@ -59,7 +59,7 @@ There are several ways to tackle this issue:
 
 * Other approach is to use a proxy configuration for Node.js.
 
-* Other approach is to solve it on server side. The application contains code for that (CORSFilter) and the filter
+* Other approach is to solve it on server side. The application contains code for that (```CORSFilter```) and the filter
 is activated in ```web.xml```. This should work, but it does not. Other problem with this approach is, that every REST
 implementation solves the problem totally different. Even Jersey 1 and 2 are different.
 

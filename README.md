@@ -49,3 +49,21 @@ Download & Install Node.js
 
 ```npm install -g @angular/cli```
 
+### CORS issues
+As this application runs both frontend and backend in a single war, there is no CORS issue.
+
+If you run the frontent externally using ```ng serve``` and access it via localhost:4200, you will have the CORS issue, because the
+backend runs on e.g. localhost:8080. This case happens during development.
+
+There are several ways to tackle this issue:
+
+* Simplest approach: For Firefox, use "cors-plugin" from Rahudevan to switch off the browsers CORS feature.
+
+* Other approach is to use a proxy configuration for Node.js.
+
+* Other approach is to solve it on server side. The application contains code for that (CORSFilter) and the filter
+is activated in web.xml. This should work, but it does not. Other problem with this approach is, that every REST
+implementation solves the problem totally different. Even Jersey 1 and 2 are different.
+
+
+

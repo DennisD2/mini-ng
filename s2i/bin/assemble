@@ -1,5 +1,13 @@
 #!/bin/bash
 
-# get sources 
-# exec maven
+echo "HOME: $HOME"
+echo "User: " `whoami`
 
+# get sources 
+cd ${WORKDIR}
+echo "Cloning ${GIT_SRC_URL} ..."
+git clone ${GIT_SRC_URL} 
+cd *
+
+# exec maven
+mvn clean install -P ng

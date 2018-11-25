@@ -64,20 +64,34 @@
 						<version>1.1</version>
 						<executions>
 							<execution>
+								<id>Install frontend modules</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>compile</phase>
+								<configuration>
+									<arguments>
+										<argument>install</argument>
+									</arguments>
+								</configuration>
+							</execution>
+							<execution>
 								<id>Build frontend</id>
 								<goals>
 									<goal>exec</goal>
 								</goals>
 								<phase>compile</phase>
+								<configuration>
+									<arguments>
+										<argument>run-script</argument>
+										<argument>build</argument>
+									</arguments>
+								</configuration>
 							</execution>
 						</executions>
 						<configuration>
 							<executable>npm</executable>
 							<workingDirectory>${project.basedir}/src/main/frontend</workingDirectory>
-							<arguments>
-								<argument>run-script</argument>
-								<argument>build</argument>
-							</arguments>
 						</configuration>
 					</plugin>
 

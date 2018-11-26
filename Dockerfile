@@ -39,34 +39,16 @@ RUN chmod 755 assemble run entrypoint
 ENV M2_HOME=${OPT}/apache-maven-3.6.0 \
     JAVA_8_HOME=${OPT}/jdk8u192-b12 \
     JAVA_11_HOME=${OPT}/jdk-11+28 \
-    JAVA_HOME=${JAVA_11_HOME} \ 
     TC_HOME=${OPT}/apache-tomcat \
-    NODE_HOME=${OPT}/node-v10.13.0-linux-x64 \
-    JAVA_HOME=${JAVA_11_HOME}
-
-ENV PATH="${M2_HOME}/bin:${JAVA_HOME}/bin:${NODE_HOME}/bin:${TC_HOME}/bin:${PATH}" \
+    NODE_HOME=${OPT}/node-v10.13.0-linux-x64
+    
+ENV JAVA_HOME=${JAVA_11_HOME} \
+    PATH="${M2_HOME}/bin:${JAVA_HOME}/bin:${NODE_HOME}/bin:${TC_HOME}/bin:${PATH}" \
     HOME="${WORKDIR}"
-
-#RUN ls /opt && echo $PATH
-#RUN java -version
-#RUN mvn -v
-#RUN node -v
 
 WORKDIR ${WORKDIR}
 RUN npm install @angular/cli -g && \
     chgrp -R 0 ${WORKDIR} ${WORKDIR}/.npm ${TC_HOME} && \
     chmod -R g+rwX ${WORKDIR} ${WORKDIR}/.npm ${TC_HOME}
-
-# get sources  # exec maven # copy war to tomcat webapps # start tomcat
-#RUN yum repolist --disablerepo=* && \
-    #yum-config-manager --disable \* > /dev/null && \
-    #yum-config-manager --enable rhel-7-server-rpms > /dev/null
-
-#yum install –y  epel-release && \
-                #yum install –y xmlstarlet && \
-                #yum clean all
-
-#RUN yum repolist && \
-#    yum list available
 
 ENTRYPOINT [ "/opt/s2i/entrypoint" ]   

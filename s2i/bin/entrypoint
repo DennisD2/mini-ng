@@ -1,8 +1,7 @@
 #!/bin/bash
 # s2i-like workflow
-
+#
 # assemble
 /opt/s2i/assemble
-
 # run
 /opt/s2i/run

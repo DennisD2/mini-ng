@@ -1,4 +1,11 @@
 #!/bin/bash
 
+echo "TC_HOME:          ${TC_HOME}"
+echo "WORKDIR:          ${WORKDIR}"
+echo "DEPLOYABLE:       ${DEPLOYABLE}"
+
 # copy war to tomcat webapps
+cp ${WORKDIR}/${DEPLOYABLE} ${TC_HOME}/webapps
+
 # start tomcat
+exec ${TC_HOME}/bin/catalina.sh run

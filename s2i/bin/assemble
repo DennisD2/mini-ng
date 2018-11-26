@@ -1,7 +1,9 @@
-#!/bin/bash
+!/bin/bash
 
-echo "HOME: $HOME"
-echo "User: " `whoami`
+echo "HOME: ${HOME}"
+echo "WORKDIR: ${WORKDIR}"
+echo "GIT_SRC_URL: ${GIT_SRC_URL}"
+echo "MAVEN_ADDOPTS: ${MAVEN_ADDOPTS}"
 
 # get sources 
 cd ${WORKDIR}
@@ -10,4 +12,4 @@ git clone ${GIT_SRC_URL}
 cd *
 
 # exec maven
-mvn clean install -P ng
+mvn clean install ${MAVEN_ADDOPTS}

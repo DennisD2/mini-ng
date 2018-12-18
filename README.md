@@ -38,7 +38,7 @@ has been no build of the frontend before.
 
 ```mvn clean install -P \!ng```
 
-(depending on the shell used, an escaping '\' is required. E.g. bash needs it.)
+(depending on the shell used, an escaping '\\' is required. E.g. bash needs it.)
 
 # How to run
 Copy war file from target directory into webapp of a tomcat installation.

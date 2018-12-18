@@ -12,7 +12,7 @@ export class HelloService {
   }
 
   public getHello(param: string): Observable<string> {
-    const serviceUrl = 'http://localhost:8080/mini-ng/rest/echo/' + param;
+    const serviceUrl = '/mini-ng/rest/echo/' + param;
     console.log('calling service URL ' + serviceUrl);
 
 //    return this.http.get(serviceUrl, {responseType: 'text' as 'json'})

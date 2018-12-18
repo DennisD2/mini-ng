@@ -7,9 +7,9 @@ The WAR file can be deployed in a Tomcat.
 
 # Dependencies
 The dependencies include some modules removed from JDK 9 onwards. 
-I assume the application runs on JDK 1.8, 9 10, and 11.
+I assume the application runs on JDK 1.8 to JDK 11.
 
-Tested on Tomcat 9.0.13, JDK 10.
+Tested on Tomcat 9.0.13, JDK 1.8, JDK 10, JDK 11.
 
 # Call example
 
@@ -28,15 +28,17 @@ This build includes the build of the frontend into the dist directory and fixes 
 For details, see ```maven-exec-plugin``` and ```maven-replacer-plugin``` sections in pom.xml.
 The result of the build is added to the WAR file. For details, see ```maven-war-plugin``` section in pom.xml.
 
-The build is activated by the profile ```ng```.
+The build is activated by the profile ```ng```, which itself is activated by default.
 
-```mvn clean install -P ng```
+```mvn clean install```
  
 ## Compile without build of frontend
 This build is faster and simply uses an earlier build result in src/frontend/dist. This does not work if there
 has been no build of the frontend before.
 
-```mvn clean install```
+```mvn clean install -P \!ng```
+
+(depending on the shell used, an escaping '\' is required. E.g. bash needs it.)
 
 # How to run
 Copy war file from target directory into webapp of a tomcat installation.

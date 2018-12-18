@@ -14,7 +14,7 @@ Tested on Tomcat 9.0.13, JDK 1.8, JDK 10, JDK 11.
 # Call example
 
 ## Start page
-http://localhost:8080/mini-ng
+http://localhost:8080/mini-ng 
 
 ## REST service call
 
